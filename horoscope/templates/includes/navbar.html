@@ -1,0 +1,8 @@
+{%load my_filter%}
+<nav>
+    <a href="{% url 'base-name'%}">Главная</a> 
+    <a href="https://terrikon.com/champions-league">Источник</a>
+    {% for z,description_of_zodiac in zodiac_dict.items %}
+     <a href="{% url 'horoscope-name' znak_zodiaka=z %}">{{description_of_zodiac|split|first}}</a>
+    {%endfor%}
+</nav>

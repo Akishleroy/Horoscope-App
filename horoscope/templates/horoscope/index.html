@@ -1,0 +1,22 @@
+{%extends 'base.html' %}
+{%load static%}
+
+
+{%block css_additional%} 
+    <link rel="stylesheet" href="{% static 'horoscope/css/index.css' %}">
+{%endblock%}
+
+
+
+
+{%block title%} menu {%endblock%}
+
+
+{%block content %}
+    <h1>Приложение Гороскоп</h1>
+    <ul>
+        {% for z in my_list %}
+        <li><a href="{% url 'horoscope-name' znak_zodiaka=z %}">{{z}}</a></li>
+        {%endfor%}
+    </ul>
+{%endblock%}
